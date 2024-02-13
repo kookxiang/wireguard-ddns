@@ -1,0 +1,11 @@
+[Unit]
+Description=update endpoint addresses for WireGuard peers
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Restart=on-failure
+ExecStart=/usr/bin/wireguard-ddns
+
+[Install]
+WantedBy=multi-user.target
